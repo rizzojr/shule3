@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -26,6 +27,7 @@ Route::get('/', [App\Http\Controllers\Frontend\FrontendController::class, 'index
 Route::get('/about', [App\Http\Controllers\Frontend\FrontendController::class, 'aboutUs']);
 Route::get('/courses', [App\Http\Controllers\Frontend\FrontendController::class, 'coursesf']);
 Route::get('/quiz', [App\Http\Controllers\Frontend\FrontendController::class, 'quizf']);
+Route::get('quiz/{$quiz_id}', [App\Http\Controllers\Frontend\FrontendController::class, 'Viewquestions']);
 Route::get('/events', [App\Http\Controllers\Frontend\FrontendController::class, 'eventf']);
 
 Route::get('/contact', [App\Http\Controllers\Frontend\FrontendController::class, 'contactf']);
@@ -58,8 +60,8 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function(){
     Route::resource('courzes',App\Http\Controllers\CozeController::class);
     Route::resource('abouts',App\Http\Controllers\AboutController::class);
     Route::resource('subscribers',App\Http\Controllers\SubscriberController::class);
-   // Route::resource('enquiries',App\Http\Controllers\EventController::class);
-
+    Route::resource('enquiries',App\Http\Controllers\EventController::class);
+ 
    // Route::get('/events/create',  [App\Http\Controllers\EventController::class, 'create']);
 
     Route::get('/dashboard',  [App\Http\Controllers\Admin\DashboardController::class, 'index']);
@@ -69,6 +71,19 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function(){
     Route::get('edit-category/{category_id}',  [App\Http\Controllers\Admin\CategoryController::class, 'edit']);
     Route::put('update-category/{category_id}',  [App\Http\Controllers\Admin\CategoryController::class, 'update']);
     Route::get('delete-category/{category_id}',  [App\Http\Controllers\Admin\CategoryController::class, 'destroy']);
+
+    //QUIZ
+    Route::get('quiz',  [App\Http\Controllers\Admin\QuizController::class, 'index']);
+    Route::get('quizzes/{id}',  [App\Http\Controllers\Admin\QuizController::class, 'show']);
+    Route::get('add-quiz',  [App\Http\Controllers\Admin\QuizController::class, 'create']);
+    Route::post('add-quiz',  [App\Http\Controllers\Admin\QuizController::class, 'store']);
+    Route::get('edit-question/{question_id}',  [App\Http\Controllers\Admin\QuizController::class, 'edit']);
+   // Route::get('/update-quiztitle/{quiz_id}',  [App\Http\Controllers\Admin\QuizController::class, 'editquiz']);
+    Route::put('update-question/{category_id}',  [App\Http\Controllers\Admin\QuizController::class, 'update']);
+    Route::get('delete-question/{q_id}',  [App\Http\Controllers\Admin\QuizController::class, 'destroy']);
+    Route::put('edit-quiztitle/{quiz_id}',  [App\Http\Controllers\Admin\QuizController::class, 'editquiz']);
+    Route::get('edit-quiztitle/{quiz_id}',  [App\Http\Controllers\Admin\QuizController::class, 'updatequiz']);
+    Route::get('delete-quiztitle/{quiz_id}',  [App\Http\Controllers\Admin\QuizController::class, 'destroyquiz']);
 
 
     //levels

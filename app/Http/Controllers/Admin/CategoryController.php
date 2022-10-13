@@ -11,9 +11,9 @@ use Illuminate\Support\Facades\Auth;
 
 class CategoryController extends Controller
 {
-    //
+    //   
     public function index()
-    {
+    { 
         $category = Category::all();
         return view('admin.category.index', compact('category'));
     }
@@ -36,7 +36,7 @@ class CategoryController extends Controller
         $category->save();
 
         return redirect('admin/category')-> with('message', 'Category Added Successfully');
-       
+         
 
 
     }

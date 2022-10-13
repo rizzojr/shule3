@@ -59,6 +59,7 @@
     border: 1px solid #ddd;
     border: 1px solid var(--fc-border-color, #ddd);
   }
+  
 /* for FF, which doesn't expand a 100% div within a table cell. use absolute positioning */
 /* inner-wrappers are responsible for being absolute */
 /* TODO: best place for this? */

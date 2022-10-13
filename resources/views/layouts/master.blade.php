@@ -7,6 +7,13 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+
+    <!-- CDN -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js" rel="stylesheet">
+
     <title>@yield('title')</title>
 
 
@@ -56,9 +63,10 @@
 
     </div>
 
-    <script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
-  <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
-  <script src="{{ asset('assets/js/scripts.js') }}"></script>
+  <script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
+  <script src="//cdn.datatables.net/1.12.0/js/jquery.dataTables.min.js"></script>
+
+  
 
 
   <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
@@ -72,7 +80,8 @@
     });
 </script>
 
-<script src="//cdn.datatables.net/1.12.0/js/jquery.dataTables.min.js"></script>
+<script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('assets/js/scripts.js') }}"></script>
 <script src="https://cdn.datatables.net/1.12.0/js/dataTables.bootstrap5.min.js"></script>
 
 <script>

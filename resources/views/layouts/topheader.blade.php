@@ -29,17 +29,16 @@
                         Have any Question?
 
                         <div id="phone"><i class="fal fa-phone"></i>
-                           @php
+                          @php
 
 
                            $contacts = App\Models\Contact::get()
 
 
-
                            @endphp
 
                         <a href="tell:+255 759 366 141">{{$contacts[0]->phone}}</a></div>
-                        <div id="email"><i class="fal fa-envelope"></i> <a href="mailto:info@theSchool.edu">{{$contacts[0]->email}}</a></div>
+                        <div id="email"><i class="fal fa-envelope"></i> <a href="mailto:info@theSchool.edu"><{{$contacts[0]->email}}</a></div>
                         <div id="profile"><i class="fal fa-user"></i> <a href="javascript:void(0)">Hello, theSchool</a></div>
                     </div>
                 </div>

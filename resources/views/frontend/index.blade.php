@@ -117,8 +117,6 @@
             </div>
             @endforeach
 
-
-
         </div>
     </div>
 </div>
@@ -285,6 +283,7 @@
 <!-- Main JS-->
 <script src="{{ asset('allassets/js/main.js') }}"></script>
 
+
 <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
 <script>
     window.ga = function() {
@@ -299,6 +298,7 @@
 
 </script>
 <script src="https://www.google-analytics.com/analytics.js" async></script>
+
 </body>
 
 </html>

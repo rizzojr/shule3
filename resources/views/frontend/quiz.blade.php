@@ -67,96 +67,20 @@
                     </form>
                 </div>
             </div>
+            @foreach($quizzes as $quiz)
 
-            <div class="col-md-4 col-lg-3">
-                <div class="educa-single-quiz-context">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSl0vz9TTdqDma3ySo4ylHcVlQstSOanX5Gew&usqp=CAU" alt="Quiz">
-                    <a href="{{url('/quizesingle')}}">English Language</a>
-                    <p class="educa-quiz-context">
-                        <span><i class="fal fa-book"></i> 10 Questions</span>
-                        <span><i class="fal fa-user"></i> 100 Students</span>
-                    </p>
-                    <span class="educa-price">1000</span>
+                <div class="col-md-4 col-lg-3">
+                    <div class="educa-single-quiz-context">
+                        <img src="https://media.istockphoto.com/vectors/electrolysis-of-water-vector-id1271622587?k=20&m=1271622587&s=612x612&w=0&h=CNgTEd8gcPO-e4VRFX4EuZ6Urt_ivUVvRKh4dRuzshg=" alt="Quiz">
+                        <a href="{{url('quiz/'.$quiz->id)}}">{{$quiz->quiz}}</a>
+                        <p class="educa-quiz-context">
+                            <span><i class="fal fa-book"></i> {{$quiz->questions->count()}} Questions</span>
+                            <span><i class="fal fa-user"></i> 100 Students</span>
+                        </p>
+                        <span class="educa-price">1500</span> 
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-4 col-lg-3">
-                <div class="educa-single-quiz-context">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhwZRqMzhxT0MmLav67bsszmy7S445Za0UVg&usqp=CAU" alt="Quiz">
-                    <a href="quiz-single.php">Biology</a>
-                    <p class="educa-quiz-context">
-                        <span><i class="fal fa-book"></i> 10 Questions</span>
-                        <span><i class="fal fa-user"></i> 100 Students</span>
-                    </p>
-                    <span class="educa-price">1500</span>
-                </div>
-            </div>
-            <div class="col-md-4 col-lg-3">
-                <div class="educa-single-quiz-context">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5GRH1puetL991-1G1GL0VBbYH1AsbF51VNg&usqp=CAU" alt="Quiz">
-                    <a href="quiz-single.php">Chemistry</a>
-                    <p class="educa-quiz-context">
-                        <span><i class="fal fa-book"></i> 10 Questions</span>
-                        <span><i class="fal fa-user"></i> 100 Students</span>
-                    </p>
-                    <span class="educa-price">2000</span>
-                </div>
-            </div>
-            <div class="col-md-4 col-lg-3">
-                <div class="educa-single-quiz-context">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJSdHD9UmZSF8ukSbqMUP9qthBFh1idQM61w&usqp=CAU" alt="Quiz">
-                    <a href="quiz-single.php">Practical</a>
-                    <p class="educa-quiz-context">
-                        <span><i class="fal fa-book"></i> 10 Questions</span>
-                        <span><i class="fal fa-user"></i> 100 Students</span>
-                    </p>
-                    <span class="educa-price">2500</span>
-                </div>
-            </div>
-            <div class="col-md-4 col-lg-3">
-                <div class="educa-single-quiz-context">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyB9KccGkn-fUkkSmZKQMlpcZU7KcET-Ew6g&usqp=CAU" alt="Quiz">
-                    <a href="quiz-single.php">Literature Analysis</a>
-                    <p class="educa-quiz-context">
-                        <span><i class="fal fa-book"></i> 10 Questions</span>
-                        <span><i class="fal fa-user"></i> 100 Students</span>
-                    </p>
-                    <span class="educa-price">2000</span>
-                </div>
-            </div>
-            <div class="col-md-4 col-lg-3">
-                <div class="educa-single-quiz-context">
-                    <img src="https://www.exploringnature.org/graphics/header_classification.jpg" alt="Quiz">
-                    <a href="quiz-single.php">Classification</a>
-                    <p class="educa-quiz-context">
-                        <span><i class="fal fa-book"></i> 10 Questions</span>
-                        <span><i class="fal fa-user"></i> 100 Students</span>
-                    </p>
-                    <span class="educa-price">1000</span>
-                </div>
-            </div>
-            <div class="col-md-4 col-lg-3">
-                <div class="educa-single-quiz-context">
-                    <img src="https://media.istockphoto.com/photos/erlenmeyer-flasks-beaker-on-bench-laboratory-prepare-for-testing-picture-id1204589504?k=20&m=1204589504&s=612x612&w=0&h=wlY_YKEbtSFmidR4d8NHodBIPdLG60UgxcN4p1diIvc=" alt="Quiz">
-                    <a href="quiz-single.php">Volumetric Analysis</a>
-                    <p class="educa-quiz-context">
-                        <span><i class="fal fa-book"></i> 10 Questions</span>
-                        <span><i class="fal fa-user"></i> 100 Students</span>
-                    </p>
-                    <span class="educa-price">1000</span>
-                </div>
-            </div>
-            <div class="col-md-4 col-lg-3">
-                <div class="educa-single-quiz-context">
-                    <img src="https://media.istockphoto.com/vectors/electrolysis-of-water-vector-id1271622587?k=20&m=1271622587&s=612x612&w=0&h=CNgTEd8gcPO-e4VRFX4EuZ6Urt_ivUVvRKh4dRuzshg=" alt="Quiz">
-                    <a href="quiz-single.php">Electrolysis</a>
-                    <p class="educa-quiz-context">
-                        <span><i class="fal fa-book"></i> 10 Questions</span>
-                        <span><i class="fal fa-user"></i> 100 Students</span>
-                    </p>
-                    <span class="educa-price">1500</span>
-                </div>
-            </div>
-
+            @endforeach
             <div class="col-md-12">
                 <div class="educa-pagination-area-start">
                     <ul class="educa-paginate">

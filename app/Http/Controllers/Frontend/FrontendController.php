@@ -2,6 +2,11 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Models\Quiz;
+use App\Models\Question;
+use App\Models\Answer;
+use App\Models\CorrectAnswer;
+
 use App\Http\Controllers\Controller;
 use App\Models\About;
 use Illuminate\Http\Request;
@@ -68,9 +73,22 @@ class FrontendController extends Controller
         public function quizf()
         {
 
-            return view('frontend.quiz');
+            $quizzes = Quiz::get();
+
+            return view('frontend.quiz',compact('quizzes'));
 
         }
+
+
+        public function Viewquestions($id)
+        {
+
+           return 'imekubali';
+
+        }
+
+
+
 
         public function eventf()
         {

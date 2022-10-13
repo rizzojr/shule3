@@ -29,11 +29,11 @@
                         <th>Category Name</th>
                         <th>Status</th>
                         <th>Edit</th>
-                        <th>Delete</th>
+                        <th>Delete</th> 
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($category as $item)
+                    @foreach($category as $item) 
                     <tr>
                         <td>{{ $item->id }}</td>
                         <td>{{ $item->name }}</td>
