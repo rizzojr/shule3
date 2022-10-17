@@ -26,7 +26,7 @@
                  </div> 
                 @endif
 
-                <form action="{{ url('admin/update-question/'.$question->id) }}" method="POST">
+                <form action="{{ url('admin/update-question/'.$question->id) }}" method="POST"> 
                     @csrf
                     @method('PUT')
                     

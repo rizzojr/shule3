@@ -19,8 +19,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="educa-breadcrumb-content">
-                    <h1>{{$data->quiz}}</h1>
-                    <p><a href="{{url('/check/'.$data)}}">Home</a>/ <span>{{$data->quiz}}</span></p>
+                    
                 </div>
             </div>
         </div>
@@ -34,40 +33,36 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="educa-single-breadcrumb">
-                    <!-- <div class="educa-single-quiz-header">
-                        <h2>{{$data->quiz}}</h2>
-                    </div> -->
+                  
                     <div class="educa-single-quiz-body">
-                        <p><strong>Questions: </strong> {{$data->questions->count()}}</p>
+                     
                         <!-- <p><strong>Duration: </strong> 5 Minutes time</p> -->
                         <!-- <button type="submit" class="quiz-btn">Start Quiz</button> -->
                     </div>
+
+                    <table  id="myDataTable" class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Question</th>
+                                <th>responce</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($questions as $question)  
+                            @php $i++ @endphp
+                            <tr>
+                                <td>{{$i}}</td>
+                                <td>{{ $question->question}}</td>
+                                <td>
+                                {{ $results[$question->id]}}
+                             </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
 
-                <form action="{{ url('submit/'.$data->id) }}" method="POST" class="disable-form">
-                @csrf
-                    @method('GET')
-
-                    @php $i=1; $q=1 @endphp
-                    @foreach($data->questions as $question)
-                    <div class="educa-single-breadcrumb mt-3">
-                        <div class="educa-single-quiz-header">
-                            <label for=""><h2>{{$i++}}){{$question->question}}</h2></label>
-                         
-                            
-                        </div>
-                        @foreach($question->answers as $answer)
-                        @php $a=1;$q=1 @endphp
-                        <div class="educa-single-quiz-body">
-                            <p> <label for="">{{$answer->answer}}</label>
-                                <input type="radio" name="questionAns[{{$question->id}}]" value="{{$answer->id}}">
-                            </p>
-                        </div>
-                        @endforeach
-                    </div>
-                    @endforeach
-                    <p class="text-center"><button type="submit" class="submit-btn">Submit Quiz</button></p>
-                </form>
             </div>
         </div>
     </div>

@@ -80,11 +80,33 @@ class FrontendController extends Controller
         }
 
 
-        public function Viewquestions($id)
+        public function Viewquestions($quiz_id)
         {
 
-           return 'imekubali';
+           $data = Quiz::where('id',$quiz_id)->first();
+          // return $data;
+           
+           return view('frontend.quizestart',compact('data',$i = 0));
 
+        }
+
+        public function checkanswers(Request $request,$quiz_id)
+        {
+           $results=[];
+           $quiz = Quiz::where('id',$quiz_id)->first();
+           foreach ($quiz->questions as  $question) {
+           $correctAns = CorrectAnswer::where('question_id',$question->id)->first();
+                  if ($correctAns->answer_id != $request->questionAns[$question->id]) {
+                    
+                     $results[$question->id] = 'incorrect';
+                    
+                  }else {
+                    
+                    $results[$question->id] = 'correct';
+                  }          
+                
+           }
+            return view('frontend.response',['results'=>$results,'questionAns'=>$request->questionAns,'i'=>0,'questions'=>$quiz->questions]);
         }
 
 

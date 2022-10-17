@@ -72,7 +72,7 @@
                 <div class="col-md-4 col-lg-3">
                     <div class="educa-single-quiz-context">
                         <img src="https://media.istockphoto.com/vectors/electrolysis-of-water-vector-id1271622587?k=20&m=1271622587&s=612x612&w=0&h=CNgTEd8gcPO-e4VRFX4EuZ6Urt_ivUVvRKh4dRuzshg=" alt="Quiz">
-                        <a href="{{url('quiz/'.$quiz->id)}}">{{$quiz->quiz}}</a>
+                        <a href="{{url('/quiz/'.$quiz->id)}}">{{$quiz->quiz}}</a>
                         <p class="educa-quiz-context">
                             <span><i class="fal fa-book"></i> {{$quiz->questions->count()}} Questions</span>
                             <span><i class="fal fa-user"></i> 100 Students</span>
@@ -100,7 +100,7 @@
     </div>
 </section>
 <!-- Quiz area end -->
-@include('layouts.footer')
+@include('layouts.footer');
 <!-- End of theSchool Bottom footer Area -->
 
 <a href="#home" class="nav-link js-scroll-trigger btm-to-top"><i class="fal fa-long-arrow-up"></i></a>

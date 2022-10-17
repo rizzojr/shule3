@@ -21,7 +21,7 @@
                 
                  </div> 
                 @endif
-            </div>
+            </div> 
             <div class="container mt-sm-5 my-1">
                 @foreach($data->questions as $q)
                 <div class="question ml-sm-5 pl-sm-5 pt-2">

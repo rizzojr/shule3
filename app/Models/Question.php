@@ -13,7 +13,7 @@ class Question extends Model
         return $this->hasMany(Answer::class);
     }
 
-    public function quiz()
+    public function quizes()
     {
         return $this->belongsTo(Quiz::class);
     }

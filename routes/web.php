@@ -27,7 +27,8 @@ Route::get('/', [App\Http\Controllers\Frontend\FrontendController::class, 'index
 Route::get('/about', [App\Http\Controllers\Frontend\FrontendController::class, 'aboutUs']);
 Route::get('/courses', [App\Http\Controllers\Frontend\FrontendController::class, 'coursesf']);
 Route::get('/quiz', [App\Http\Controllers\Frontend\FrontendController::class, 'quizf']);
-Route::get('quiz/{$quiz_id}', [App\Http\Controllers\Frontend\FrontendController::class, 'Viewquestions']);
+Route::get('/quiz/{quiz_id}', [App\Http\Controllers\Frontend\FrontendController::class, 'Viewquestions']);
+Route::get('/submit/{question}', [App\Http\Controllers\Frontend\FrontendController::class, 'checkanswers']);
 Route::get('/events', [App\Http\Controllers\Frontend\FrontendController::class, 'eventf']);
 
 Route::get('/contact', [App\Http\Controllers\Frontend\FrontendController::class, 'contactf']);

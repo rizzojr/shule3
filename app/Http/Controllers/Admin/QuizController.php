@@ -19,7 +19,7 @@ class QuizController extends Controller
     {
         $quizzes = Quiz::all();
         $i = 0;
-        return view('admin.Quiz.index2',compact('quizzes','i'));
+        return view('admin.Quiz.index2',compact('quizzes','i')); 
         
     }
 
@@ -31,7 +31,7 @@ class QuizController extends Controller
         
     }
 
-    public function editquiz(Request $request,$quiz_id)
+    public function editquiz(Request $request,$quiz_id) 
     {
         $validate = $request->validate([
             'quiz'=>'required',
